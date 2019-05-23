@@ -16,7 +16,7 @@ Optionally, you may choose to add basic user registration and authentication to 
 
 ## PROJECT THESIS
 
-I decided create a webpage under the guise 
+I decided create a webpage under the name of teh recipe diary. The idea was to get most of the project
 ## REASONING
 
 It will qualify the following categories in the assignment brief
