@@ -144,6 +144,9 @@ I really enjoyed this project despite the many painful breaking scenarios of yes
 of teh PHP codes i have written in the past. I also applied some things i've done with PHP. No one can possibly master any programming language but I think having a good understanding of django will eliminate some database woes chasing a career in fullstack. 
 I will be making some side projects toimprove my django knowledge.
 
+some commands wouldn't work for uploading to heroku but worked fine locally. The experience has been an eye opener to a new worl of possibilities
+
+
 ### ACKNOWLEDGEMENTS
 
 Many thanks to Anthony @prettyprinted for his help with django. I’ve managed to limit the file size of some of my websites by applying some of the skills learnt in django on  PHP scripts.
