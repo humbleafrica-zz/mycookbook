@@ -16,9 +16,7 @@ Optionally, you may choose to add basic user registration and authentication to 
 
 ## PROJECT THESIS
 
-The project idea is to match Artist (both Audio and Visual) to contribute to a project. We all like art in one form or another whether it’s music, drawing, architecture etc. Imagine your favourite music, it’s video choreographed by your favourite choreographer, it’s album cover designed by your favourite grafittist, artist or graphic designer. The above are all forms of art however there is no such community where these artist like each others work and submit a public appraisal to work with one another. The idea is fans can witness the requests but cannot interact with comments. They can only like with their social media accounts. This gives new talent a chance to blossom due to recognised artists picking their work. The signup will be free for artists, they can comment on other artists’ works as well as request to use other artists’ work in their work (observing copyright rules).
-
-Artists can request for features to be added as well as top up earnings for a feature to rise to the top of most requested feature. At the same time artists can request for a bug fix.
+I decided create a webpage under the guise 
 ## REASONING
 
 It will qualify the following categories in the assignment brief
