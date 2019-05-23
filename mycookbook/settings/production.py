@@ -37,7 +37,7 @@ ADMINS = (
 SECRET_KEY =os.environ.get('SECRET_KEY','-9lfmngx-%ast4fq8pctbv)3u9@j^=98&u#zs47)d3_)j5gu0z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*','']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -47,7 +47,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 INSTALLED_APPS = [
     'django_mysql'
-    'storages',
+
     'thecookbook',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 
     
 ]
