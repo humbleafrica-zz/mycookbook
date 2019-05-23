@@ -1,0 +1,55 @@
+{% extends 'recipes/base.html' %} {% block content %} {% block title %}{% for instance in object_list %}{{ instance.recipe_name }}{% endfor %} {% endblock %}
+
+<body>
+    <div class="container wrapper">
+        <h2 class="header-index">{% for instance in object_list %}{{ instance.recipe_name }}{% endfor %} Method</h2>
+        <div id="no-more-tables" class="col row">
+            <a href="/recipe_update/{{ instance.pk }}/"><input type="button" class="dbuttons btn btn-warning" Value="Edit"/></a>
+            <a href="/recipe_add/"><input type="button" class="dbuttons btn btn-success" Value="Add"/></a>
+            <a href="/recipe_delete/{{ instance.pk }}/"><input type="button" class="dbuttons btn btn-danger" Value="Delete"/></a>
+            <input type="button" onClick="javascript:history.go(-1);" class="dbuttons btn btn-primary" Value="Back" />
+            <table class="table recipe-detail table-dark  table-condensed">
+                <thead>
+                    <tr>
+                        <th scope="col">Meal Name</th>
+                        <th scope="col">Serves</th>
+                        <th scope="col">Scalable</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Difficulty</th>
+                        <th scope="col">Suits</th>
+                        <th scope="col">Cuisine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for instance in object_list %}
+                    <tr>
+                        <td data-title="Name">{{ instance.recipe_name }}</td>
+                        <td data-title="Serves">
+                            {{ instance.serves }}
+                        </td>
+                        {%if instance.scalable == True %}
+                        <td data-title="Scalable">Yes</td>
+                        {% else %}
+                        <td data-title="Scalable">No</td>
+                        {% endif%}
+                        <td data-title="Suits">{{ instance.recipe_type }}</td>
+                        <td data-title="Difficulty">{{ instance.difficulty }}</td>
+                        <td data-title="Suits">{{ instance.suits }}</td>
+                        <td data-title="Cuisine">{{ instance.cuisine }}</td>
+                    </tr>
+                    <tr>
+                        <td data-title="Image"><a href="">
+                            <img height="auto" src="{{ instance.image.url }}">
+                            </img></a></td>
+                        <td data-title="Method">{{ instance.method }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <h1 class="header-index">Let's Get You Satisfied</h1>
+    </div>
+
+</body>
+{% endblock %}

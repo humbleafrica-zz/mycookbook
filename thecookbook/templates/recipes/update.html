@@ -1,0 +1,21 @@
+{% extends 'recipes/base.html' %} {% block content %} {% block title %}Breakfast Recipes, Your Way{% endblock %}
+
+<body>
+    <div class="container wrapper">
+
+        <form method="POST" action="{{ recipe_delete }}." class="row"> {% csrf_token %}
+            <h1 class="col header-index">Edit This Recipe</h1>
+            <div class="row container-fluid delrecipe">
+                {{ form.as_p }}
+            </div>
+            <div class="col text-left">
+                <input class=" btn btn-warning" value="Cancel" onClick="javascript:history.go(-1);" />
+            </div>
+            <div class="col text-right">
+                <input class=" btn btn-success" type="submit" value="Update" />
+            </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

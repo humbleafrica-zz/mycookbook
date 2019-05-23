@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+
+
+body {
+    background: white url('/static/media/images/background.jpg')no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    margin: 230px auto;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center !important;
+    margin: 12px auto;
+    color: #ffffff;
+}
+
+.header-index {
+    margin: 20px auto;
+    text-shadow: 1px 1px #1f1f1f;
+}
+
+.header-inst {
+    text-shadow: 1px 1px #1f1f1f;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.recipe-detail {
+    padding: 0 10px;
+    color: #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    opacity: .8;
+}
+
+.dbuttons {
+    margin: 5px 2px;
+    padding: 5px;
+}
+
+.recipe_id {
+    padding: 2px 5px;
+}
+
+.logo {
+    position: absolute;
+    top: 80px;
+    margin: 40px auto;
+    left: 47%;
+}
+
+.meal {
+    text-align: center;
+    font: 50px bold, tahoma;
+    min-height: 250px;
+    margin: 12px 5px;
+    padding: 0px;
+    border: 5px solid #f1f1f1;
+    border-radius: 5px;
+}
+
+/* breakfast home tabe styling*/
+
+.breakfast,
+.lunch,
+.dinner {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    color: #E21737;
+    text-shadow: 1px 1px #000000;
+}
+
+.breakfast {
+    background: white url('/static/media/images/breakfast.jpg')no-repeat center center;
+    background-size: cover;
+}
+
+/* lunch home tabe styling*/
+
+.lunch {
+    background: white url('/static/media/images/lunch.jpg')no-repeat center center;
+}
+
+/* dinner home tabe styling*/
+
+.dinner {
+    background: white url('/static/media/images/dinner.jpg')no-repeat center center;
+}
+
+.food {
+    position: relative;
+    float: left;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.favourites {
+    color: #f1f1f1;
+    font-weight: bold;
+    text-shadow: 1px 1px #000000;
+    margin: 10px auto;
+}
+
+.table-dark {
+    opacity: .8;
+}
+
+.paginate_button {
+    margin: 2px;
+
+}
+
+.detail {
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+}
+
+.caed {
+    margin: 2px auto;
+    text-align: center;
+}
+
+/*table image styling*/
+
+tr td img {
+    height: 80%;
+    width: 80%;
+    border-radius: 5px;
+}
+
+
+textarea,
+select {
+    border-radius: 5px;
+
+}
+
+/* ############# styling mobile ################*/
+
+@media only screen and (max-width: 800px) {
+
+    .recipe-detail {
+        padding: 0 10px;
+        color: #000000;
+        border-radius: 5px;
+        background-color: #ffffff;
+        opacity: .8;
+        margin: .5em 0em 0em 0em !important;
+    }
+
+    .favourites {
+        color: #f1f1f1;
+        font-weight: bold;
+        text-shadow: 1px 1px #000000;
+    }
+
+    .logo {
+        position: absolute;
+        top: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 38%;
+
+    }
+}
+
+/* Force table to not be like tables anymore */
+
+#no-more-tables table,
+#no-more-tables thead,
+#no-more-tables tbody,
+#no-more-tables th,
+#no-more-tables td,
+#no-more-tables tr {
+    display: block;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+
+#no-more-tables thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+#no-more-tables tr {
+    border: 1px solid #ccc;
+}
+
+#no-more-tables td {
+    /* Behave like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+}
+
+#no-more-tables td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+}
+
+/*
+        Label the data
+        */
+
+#no-more-tables td:before {
+    content: attr(data-title);
+}
+
+
+
+/*#####login form styling##############*/
+
+.loginform {
+    margin: 250px auto 10px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.signupForm {
+    margin: 50px auto 10px auto;
+    padding: 10px;
+    text-align: left;
+}
+
+
+#id_username,
+#id_password,
+#id_password1,
+#id_password2 {
+    margin: 2px;
+    border: 1px solid #000000;
+
+}
+
+/*#######search bar styling */
+
+input,
+text {
+    margin: 2px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.sicon {
+    background-color: #343A40;
+    padding: 3px 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/*################add recipe view styling######################*/
+
+form {
+    text-shadow: 1px 1px #000000;
+    background-color: #f1f1f1;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.addform {
+    color: #000000;
+    text-shadow: 1px 1px #009941;
+    background-color: #f1f1f1;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.delform {
+    color: #000000;
+    text-shadow: 1px 1px #C93241;
+    background-color: #f1f1f1;
+    opacity: .8;
+    border-radius: 5px;
+    font-size: 40px;
+    margin: 5px auto;
+}
+
+.delact {
+    margin: 5px auto;
+}
+
+
+/*.frow {
+    padding: 1px;
+    border-radius: 5px;
+}*/
+
+.addrecipe,
+.delrecipe {
+    margin: 0 auto;
+}
+
+/*############footer styling################*/
+
+.footer {
+    clear: both;
+    /*position: absolute;*/
+    bottom: -1px !important;
+    width: 100%;
+    background: #343A40;
+    color: #ffffff;
+    min-height: 70px;
+    opacity: .9;
+    border-top: 3px solid #000000;
+    margin-bottom: 0;
+    text-align: center;
+}

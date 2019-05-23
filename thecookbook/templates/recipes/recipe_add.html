@@ -1,0 +1,17 @@
+{% extends 'recipes/base.html' %} {% block content %} {% block title %}Breakfast Recipes, Your Way{% endblock %}
+
+<body>
+    <div class="container wrapper">
+        <form method="POST" action="" class="addform row"> {% csrf_token %}
+            <h1 class="col header-index">Add A New Recipe</h1>
+            <div class="row container-fluid addrecipe">
+                {{ form.as_p }}
+            </div>
+            <div class="col text-right">
+                <input class="btn btn-success" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

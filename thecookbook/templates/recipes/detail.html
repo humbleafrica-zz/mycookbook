@@ -1,0 +1,74 @@
+{% extends 'recipes/base.html' %} {% block content %} {% block title %}{% for instance in object_list %}{{ instance.recipe_name }}{% endfor %} {% endblock %}
+
+<body>
+    <div class="container wrapper">
+        {% for instance in object_list %}
+        <h2 class="header-index">{{ instance.recipe_name }}</h2>
+        {% endfor %}
+        <div id="no-more-tables" class="col row">
+            {% if error_message %}
+            <div class="col"> {{ error_message}}</div>
+            {% endif %}
+            <table class=" table recipe-detail table-dark  table-condensed">
+                <thead>
+                    <tr>
+                        <th scope="col">Meal No.</th>
+                        <th scope="col">Meal Name</th>
+                        <th scope="col">Serves</th>
+                        <th scope="col">Scalable</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Difficulty</th>
+                        <th scope="col">Suits</th>
+                        <th scope="col">Cuisine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for instance in object_list %}
+                    <tr>
+                        <td data-title="Number">{{ instance.pk }}</td>
+                        <td data-title="Name">{{ instance.recipe_name }}</td>
+                        <td data-title="Serves">{{ instance.serves }}</td>
+                        {%if instance.scalable == True %}
+                        <td data-title="Scalable">Yes</td>
+                        {% else %}
+                        <td data-title="Scalable">No</td>
+                        {% endif%}
+                        <td data-title="Suits">{{ instance.recipe_type }}</td>
+                        <td data-title="Difficulty">{{ instance.difficulty }}</td>
+                        <td data-title="Suits">{{ instance.suits }}</td>
+                        <td data-title="Cuisine">{{ instance.cuisine }} - {{ instance.country }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" data-title="Image">
+                            <a href="../{{ instance.pk }}/">
+                            <img height="auto" src="{{ instance.image.url }}"></img>
+                            </a>
+                        </td>
+                        <td colspan="7" data-title="Description">
+                            {{ instance.description }}
+                            <tr>
+                                <a href="../preparation/{{ instance.pk }}/"><input type="button" class="dbuttons btn btn-dark" Value="Cook"/></a>
+                                <a href="../recipe_update/{{ instance.pk }}/"><input type="button" class="dbuttons btn btn-warning" Value="Edit"/></a>
+                                <a href="../recipe_add/"><input type="button" class="dbuttons btn btn-success" Value="Add"/></a>
+                                <a href="../recipe_delete/{{ instance.pk }}/"><input type="button" class="dbuttons btn btn-danger" Value="Delete"/></a>
+                                <input type="button" onClick="javascript:history.go(-1);" class="dbuttons btn btn-primary" Value="Back" />
+                            </tr>
+                        </td>
+                    </tr>
+                    {% if request.user.is_authenticated %}
+                    <form action="{% url 'like_recipe' %}" method="post">
+                        {%csrf_token%} {% if is_liked %}
+                        <button type="submit" name="recipe_id" value="{{ instance.pk }}" class="dbuttons btn btn-success" /><i class="fas fa-heart"></i> {{ total_likes }}</button>
+                        {% else %}
+                        <button type="submit" name="recipe_id" value="{{ instance.pk }}" class="dbuttons btn btn-danger" /><i class="fas fa-heart"></i> {{ total_likes }}</button>
+                        {% endif %}
+                    </form>
+                    {% endif %} {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <h1 class="header-index">Let's Get You Satisfied</h1>
+    </div>
+
+</body>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'recipes/base.html' %} {% block content %} {% block title %}Lunch Recipes, Just Different {% endblock %}
+
+<body>
+    <div class="container wrapper">
+        <h1 class="header-index">Afternoon Meals,</h1>
+        <div id="no-more-tables" class="col recipe-detail ">
+            <div class="col">
+                <a href="../recipe_add/"><button type="button" class="dbuttons btn btn-success">Add</button></a>
+                <button type="button" class="dbuttons btn btn-primary" onClick="javascript:history.go(-1);">Back</button>
+            </div>
+            <table id="dtBasic" class="table recipe-detail table-dark  table-condensed">
+                <thead>
+                    <tr>
+                        <th scope="col">Meal No.</th>
+                        <th scope="col">Meal Name</th>
+                        <th scope="col">Appearance</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Difficulty</th>
+                        <th scope="col">Suits</th>
+                        <th scope="col">Cuisine</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for instance in object_list %}
+                    <tr>
+                        <td data-title="Number">{{ instance.pk }}</td>
+                        <td data-title="Name">
+                            <a href="../{{ instance.pk}}">{{ instance.recipe_name }}</a>
+                        </td>
+                        <td data-title="Appearance"><a href="../{{ instance.pk }}">
+                            <img src="{{ instance.image.url}}"></img></a>
+                        </td>
+                        <td data-title="Suits">{{ instance.recipe_type }}</td>
+                        <td data-title="Difficulty">{{ instance.difficulty }}</td>
+                        <td data-title="Suits">{{ instance.suits }}</td>
+                        <td data-title="Cuisine">{{ instance.cuisine }}</td>
+                        <td data-title="Action" class="col">
+                            <a href="../preparation/{{ instance.pk }}/"><button type="button" class="dbuttons btn btn-dark">Cook</button></a>
+                            <a href="../recipe_update/{{ instance.pk }}/"><button type="button" class="dbuttons btn btn-warning">Edit</button></a>
+                            <a href="../recipe_delete/{{ instance.pk }}/"><button type="button" class="dbuttons btn btn-danger">Delete</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+        <h1 class="header-index">With Love</h1>
+    </div>
+
+</body>
+{% endblock %}
