@@ -262,7 +262,7 @@ def register(request):
     
     context ={
         'form': form,
-        'signup': 'signup',
+  
     }
     
     return render(request, 'registration/reg_form.html', context)
