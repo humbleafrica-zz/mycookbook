@@ -333,6 +333,7 @@ form {
 
 .alert {
     background-color: #ffffff;
+    margin: 5px auto;
 }
 
 .addrecipe,

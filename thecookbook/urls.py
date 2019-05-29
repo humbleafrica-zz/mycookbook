@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^dessert/$', views.dessert, name='dessert'),
     url(r'^(?P<pk>[0-9]+)/$', views.recipe_detail, name='detail'),
     url(r'^recipe_add/$', views.recipe_add, name='recipe_add'),
-    url(r'^recipes/$', views.recipes, name='recipes'), 
     url(r'^preparation/(?P<pk>[0-9]+)/$', views.preparation, name='preparation'),
     url(r'^recipe_update/(?P<pk>[0-9]+)/$', views.recipe_update, name='recipe_update'),
     url(r'^recipe_delete/(?P<pk>[0-9]+)/$', views.recipe_delete, name='recipe_delete'),
