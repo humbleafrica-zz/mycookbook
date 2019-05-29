@@ -225,6 +225,12 @@ def recipe_add(request):
     return render(request, 'recipes/recipe_add.html', context)
    
 #return all recipes
+def recipes(request):
+    qs=Recipe.objects.all()
+    context={
+        'qs': qs,
+    }
+    return render(request, 'recipes/all.html', context)
 
 #update recipe view
 def recipe_update(request, pk):

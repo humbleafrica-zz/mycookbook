@@ -18,11 +18,13 @@ from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from customers import views as user_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('thecookbook.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^register/', user_views.register, name="register"),
 
 ]
 

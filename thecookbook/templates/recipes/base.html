@@ -60,7 +60,11 @@
 {% block logo %}
 <div class="logo">
     <img src="{% static 'media/images/logo.png' %}" height="100" alt="The Recipe Diary">
-</div> {% endblock %} {% block content %} {% endblock %} {%block favourites%}
+</div> {% endblock %} {% if messages %} {% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %} {% endif %} {% block content %} {% endblock %} {%block favourites%}
 <br/> {% endblock %} {%block footer%}
 <footer class="footer">
     Crafted Passionately by <i> <a href="">Humbleafrica</a> {% now 'Y' %}</i>

@@ -319,10 +319,9 @@ form {
 }
 
 
-/*.frow {
-    padding: 1px;
-    border-radius: 5px;
-}*/
+.alert {
+    background-color: #ffffff;
+}
 
 .addrecipe,
 .delrecipe {

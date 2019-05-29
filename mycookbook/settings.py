@@ -33,7 +33,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 INSTALLED_APPS = [
     'customers',
-    'crispy_forms'
+    'crispy_forms',
     'thecookbook',
     'django.contrib.admin',
     'django.contrib.auth',
