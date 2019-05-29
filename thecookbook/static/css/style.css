@@ -18,6 +18,12 @@ body {
 
 .wrapper {
     margin: 230px auto;
+    text-shadow: 1px 1px #000000;
+    background-color: #f1f1f1;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 10px 15px;
+
 }
 
 a:link,
@@ -289,11 +295,17 @@ text {
 
 /*################add recipe view styling######################*/
 
+/*
 form {
     text-shadow: 1px 1px #000000;
     background-color: #f1f1f1;
     opacity: 0.9;
     border-radius: 5px;
+    padding: 0px 15px;
+}*/
+
+#id_email {
+    border: 1px solid #000000;
 }
 
 .addform {
@@ -326,6 +338,11 @@ form {
 .addrecipe,
 .delrecipe {
     margin: 0 auto;
+}
+
+.content-section form input {
+    margin: 5px 0px !important;
+    padding: 0px 10px !important;
 }
 
 /*############footer styling################*/

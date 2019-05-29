@@ -25,7 +25,6 @@ urlpatterns = [
     url('', include('thecookbook.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^register/', user_views.register, name="register"),
-
 ]
 
 if settings.DEBUG: # new

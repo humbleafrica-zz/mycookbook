@@ -29,7 +29,6 @@ urlpatterns = [
     url(r'^preparation/(?P<pk>[0-9]+)/$', views.preparation, name='preparation'),
     url(r'^recipe_update/(?P<pk>[0-9]+)/$', views.recipe_update, name='recipe_update'),
     url(r'^recipe_delete/(?P<pk>[0-9]+)/$', views.recipe_delete, name='recipe_delete'),
-   #url(r'^register/$', views.register, name='register'),
     url(r'^like/$', views.like_recipe, name='like_recipe'),
     url(r'^api/recipe_data/$', views.get_recipe_data, name='get_recipe_data'),
     url(r'^api/cuisine_data/$', views.get_cuisine_data, name='get_cuisine_data'),

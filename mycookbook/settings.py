@@ -131,7 +131,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded/media')
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'index'
+
 
 #SSL/TLS Settings for Django
 CORS_REPLACE_HTTPS_REFERER      = False
