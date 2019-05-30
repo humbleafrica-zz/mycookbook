@@ -2,11 +2,11 @@ chardet==2.2.1
 colorama==0.2.5
 decorator==3.4.0
 dj-database-url==0.5.0
-Django==2.2.1
+Django==1.11.20
 Pillow==2.3.0
 pyparsing==2.0.1
 python-dateutil==2.8.0
 pytz==2012rc0
 requests==2.2.1
 s3transfer==0.2.0
-wheel==0.24.0
+wheel==1.11.20
