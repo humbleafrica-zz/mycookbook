@@ -1,1 +1,1 @@
-web: gunicorn mycookbook.wsgi --log-file - --log-level debug
+web: gunicorn mycookbook.wsgi --log-file -
