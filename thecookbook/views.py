@@ -1,12 +1,9 @@
 from django.shortcuts import render, render_to_response,  get_object_or_404, redirect
 from django.utils import timezone #importing the timezone model
-from datetime import datetime, timedelta # import to filter new recipes
 from .models import Recipe #importing the recipe model
-from django.http import HttpResponseRedirect
-from django.http import JsonResponse
-from django.core.urlresolvers import reverse_lazy
+from django.http import JsonResponse, HttpResponseRedirect
 from thecookbook.forms import RecipeForm #RawRecipeForm
-from django.contrib.auth.forms import UserCreationForm #import to use the builtin user creation form
+from django.contrib import messages
 
 
 
@@ -213,14 +210,18 @@ def preparation(request,pk):
     
 #add recipe view
 def recipe_add(request):
-    form = RecipeForm(request.POST, request.FILES or None)
-    if form.is_valid():
-        pic = form.cleaned_data['image']
-        form.save()
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            #pic = form.cleaned_data.get
+            messages.success(request, 'Account created for {username}!')
+            return redirect('/')
+
+    else:
         form = RecipeForm()
     context ={
         'form': form,
-        'pic':  pic,
     }
     return render(request, 'recipes/recipe_add.html', context)
    
@@ -242,13 +243,12 @@ def recipe_update(request, pk):
     context ={
         'form': form,
     }
-    return render(request, 'recipes/recipe/update.html', context) 
+    return render(request, 'recipes/update.html', context) 
      
 #recipe_delete view###################################################
 def recipe_delete(request, pk):
     obj= get_object_or_404(Recipe, pk=pk)
-    #form = RecipeForm(request.POST or None, initial=obj)
-    #confirming delte
+
     if request.method == 'POST':
         obj.delete()
         return redirect('/')
@@ -256,21 +256,5 @@ def recipe_delete(request, pk):
         'object': obj,
     }
     return render(request, 'recipes/recipe_delete.html', context)
-    
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('/')
-    else:
-        form = UserCreationForm()
-    
-    context ={
-        'form': form,
-  
-    }
-    
-    return render(request, 'registration/reg_form.html', context)
     
     

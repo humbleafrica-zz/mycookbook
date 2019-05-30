@@ -1,13 +1,12 @@
 
 from django import forms
 from .models import Recipe
-from django.contrib.auth.models import User
+
 
 
 class RecipeForm(forms.ModelForm):
   
     date_published = forms.DateField(widget=forms.widgets.DateInput(attrs={'type': 'date'}))
-
     
     class Meta:
         model = Recipe

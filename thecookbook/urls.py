@@ -12,7 +12,6 @@ from . views import(
     recipe_delete,
     recipe_detail,
     preparation,
-    register,
     like_recipe,
     get_recipe_data,
     get_allergy_data,)

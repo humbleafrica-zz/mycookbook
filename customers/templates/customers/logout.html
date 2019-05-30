@@ -1,0 +1,15 @@
+{% extends 'recipes/base.html' %} {% block content %} {% block title %} TRD - Logged Out {% endblock %}
+
+<body>
+    <div class="wrapper-form">
+        <div class="content-section">
+            <h2>You've been logged out successfully</h2>
+            <div class="border-top pt-3 text-center">
+                <small class="text-muted">
+                     <a href="{% url 'login' %}">Login Again</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

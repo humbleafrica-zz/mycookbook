@@ -1,18 +1,16 @@
-{% extends 'recipes/base.html' %} {% block content %} {% block title %}Breakfast Recipes, Your Way{% endblock %}
+{% extends 'recipes/base.html' %} {% load crispy_forms_tags %}{% block content %} {% block title %}Breakfast Recipes, Your Way{% endblock %}
 
 <body>
     <div class="container wrapper">
-
-        <form method="POST" action="{{ recipe_delete }}." class="row"> {% csrf_token %}
+        <form method="POST" action="" class="col "> {% csrf_token %}
             <h1 class="col header-index">Edit This Recipe</h1>
-            <div class="row container-fluid delrecipe">
-                {{ form.as_p }}
+            <div class="col container">
+                {{ form | crispy }}
             </div>
-            <div class="col text-left">
-                <input class=" btn btn-warning" value="Cancel" onClick="javascript:history.go(-1);" />
-            </div>
-            <div class="col text-right">
-                <input class=" btn btn-success" type="submit" value="Update" />
+            <div class="text-center">
+                <input type='button' onclick="javascript:history.go(-1);" class="btn btn-outline-warning" value="Cancel" />
+                <input class=" btn btn-outline-success" type="submit" value="Update" />
+
             </div>
         </form>
     </div>

@@ -16,14 +16,26 @@ body {
     flex-direction: column;
 }
 
-.wrapper {
+.wrapper-i,
+.wrapper,
+.wrapper-form {
     margin: 230px auto;
     text-shadow: 1px 1px #000000;
-    background-color: #f1f1f1;
-    opacity: 0.9;
     border-radius: 5px;
     padding: 10px 15px;
+}
 
+.wrapper {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    opacity: 0.9;
+
+}
+
+.wrapper-form {
+    min-height: 50vh;
+    text-shadow: 1px 1px #000000;
+    background-color: #f1f1f1;
 }
 
 a:link,
@@ -266,7 +278,7 @@ select {
     text-align: left;
 }
 
-
+/*
 #id_username,
 #id_password,
 #id_password1,
@@ -275,6 +287,7 @@ select {
     border: 1px solid #000000;
 
 }
+*/
 
 /*#######search bar styling */
 
@@ -295,25 +308,8 @@ text {
 
 /*################add recipe view styling######################*/
 
-/*
-form {
-    text-shadow: 1px 1px #000000;
-    background-color: #f1f1f1;
-    opacity: 0.9;
-    border-radius: 5px;
-    padding: 0px 15px;
-}*/
-
 #id_email {
     border: 1px solid #000000;
-}
-
-.addform {
-    color: #000000;
-    text-shadow: 1px 1px #009941;
-    background-color: #f1f1f1;
-    opacity: 0.9;
-    border-radius: 5px;
 }
 
 .delform {

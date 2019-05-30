@@ -114,7 +114,6 @@ class Recipe(models.Model):
         )
     
      # DATABASE FIELDS
-    user = models.ForeignKey(User)
     recipe_name = models.CharField(max_length=200)
     serves = models.IntegerField()
     scalable = models.BooleanField(default=True)
@@ -130,7 +129,7 @@ class Recipe(models.Model):
     cuisine = models.CharField("cuisine", max_length = 20, choices = CUISINE_CHOICE)
     uploaded_date = models.DateField(("Date Uploaded"), auto_now=False, auto_now_add=True)
     updated = models.DateField(("Last Updated"), auto_now=True,auto_now_add=False)
-    image = models.ImageField(upload_to="images/", blank=True)
+    image = models.ImageField(upload_to="recipes/",)
     notes = models.TextField(max_length=1500, blank=True)
     country = models.CharField(max_length=50)
     author = models.CharField(max_length=50, blank = False)
@@ -147,7 +146,6 @@ class Recipe(models.Model):
     # to string method
     def total_likes(self):
         return self.likes.count()
-        
         
     # absolute url method
     def get_absolute_url(self):

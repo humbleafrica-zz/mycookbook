@@ -131,4 +131,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded/media')
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = 'index'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'profile'

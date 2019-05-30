@@ -17,9 +17,6 @@ $(document).ready(function() {
         success: function(data) {
             labels = data.labels
             defaultData = data.default
-            //console.log(labels);
-            //console.log(data);
-
             var cui = document.getElementById('myChart');
             var myPieChart = new Chart(cui, {
                 type: 'doughnut',
@@ -154,16 +151,4 @@ $(document).ready(function() {
 
     $('.dataTables_length').addClass('bs-select');
 
-    /*#############built in form render styling#################*/
-    /*  $(
-          "#id_username, #id_password1, #id_password2, #id_scalable, #id_name, #id_serves, #id_prep_time, #id_cook_time, #id_description, #id_ingredients, #id_instructions, #id_suits, #id_calories, #id_fat, #id_saturates, #id_carbs, #id_sugars, #id_fibre, #id_protein, #id_salt, #id_publisher, #id_allergy, #id_difficulty, #id_recipe_type, #id_cuisine, #id_published_date, #id_uploaded_date, #id_update, #id_image, #id_notes"
-      ).addClass("frow");
-
-      $('div p').addClass(
-          'col'
-      );
-
-      $('#id_username, #id_password1, #id_password2').addClass(
-          'row'
-      );*/
 });
