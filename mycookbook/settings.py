@@ -32,6 +32,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
+    'storages',
     'customers',
     'crispy_forms',
     'thecookbook',
@@ -133,4 +134,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded/media')
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = 'profile'
+LOGIN_REDIRECT_URL = 'index'
+AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY=os.environ.get('AWS_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL= None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

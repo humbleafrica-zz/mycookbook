@@ -2,14 +2,12 @@
 
 <body>
     <div class="container wrapper">
-        <form method="POST" action="" class="col "> {% csrf_token %}
+        <form method="POST" action="" class="col " enctype='multipart/form-data'> {% csrf_token %}
             <h1 class="col header-index">Add A New Recipe</h1>
             <div class="col container">
                 {{ form | crispy }}
             </div>
-            <div class="col text-right">
-                <input class="btn btn-success" type="submit" value="Save" />
-            </div>
+            <input class="text-right btn btn-outline-success" type="submit" value="Save" />
         </form>
     </div>
 </body>

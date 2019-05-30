@@ -2,7 +2,7 @@
 
 <body>
     <div class="container wrapper">
-        <form method="POST" action="" class="col "> {% csrf_token %}
+        <form method="POST" action="" class="col " enctype='multipart/form-data'> {% csrf_token %}
             <h1 class="col header-index">Delete A Recipe</h1>
             <div class="col container">
                 <p class="delform"> Do you want to delete this {{object.name}} Recipe </p>

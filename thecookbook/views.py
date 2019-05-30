@@ -3,7 +3,6 @@ from django.utils import timezone #importing the timezone model
 from .models import Recipe #importing the recipe model
 from django.http import JsonResponse, HttpResponseRedirect
 from thecookbook.forms import RecipeForm #RawRecipeForm
-from django.contrib import messages
 
 
 
@@ -211,13 +210,11 @@ def preparation(request,pk):
 #add recipe view
 def recipe_add(request):
     if request.method == 'POST':
-        form = RecipeForm(request.POST, request.FILES)
+        form = RecipeForm(request.POST)
         if form.is_valid():
             form.save()
             #pic = form.cleaned_data.get
-            messages.success(request, 'Account created for {username}!')
             return redirect('/')
-
     else:
         form = RecipeForm()
     context ={

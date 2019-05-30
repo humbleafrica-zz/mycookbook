@@ -135,7 +135,7 @@ class Recipe(models.Model):
     author = models.CharField(max_length=50, blank = False)
     likes = models.ManyToManyField(User, blank=True, related_name="likes")
 
-    def __unicode__(self):
+    def __str__(self):
         self.save()
         return self.recipe_name
     # meta class

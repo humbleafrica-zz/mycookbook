@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 
 # Create your views here.
@@ -22,13 +22,13 @@ def register (request):
     }
     return render(request,'customers/register.html', context)
     
-@login_required #users must be logged in to view this page
+'''@login_required #users must be logged in to view this page
 def profile(request):
     context={
         
     }
     return render(request, 'customers/profile.html', context)
-    
+ '''   
 def logout (request):
     auth.logout(request)
     return render(request,'customers/logout.html')

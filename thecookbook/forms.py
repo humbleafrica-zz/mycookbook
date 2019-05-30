@@ -12,8 +12,4 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields ='__all__'
         exclude = ('likes', 'uploaded_date', 'updated',)
-      
-class RawRecipeForm(forms.Form):
-    class Meta:
-      model = Recipe
-      fields ='__all__'
+
