@@ -7,6 +7,6 @@ Pillow==2.3.0
 pyparsing==2.0.1
 python-dateutil==2.8.0
 pytz==2012rc0
-requests==2.2.1
+requests==2.20.0
 s3transfer==0.2.0
 wheel==0.33.4
